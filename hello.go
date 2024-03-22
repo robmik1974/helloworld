@@ -2,21 +2,24 @@ package main
 
 import "fmt"
 
-const spanish = "Spanish"
-const french = "French"
-const polish = "Polish"
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const frenchHelloPrefix = "Bonjour, "
-const polishHelloPrefix = "Witaj, "
+const (
+	spanish            = "Spanish"
+	french             = "French"
+	polish             = "Polish"
+	englishHelloPrefix = "Hello, "
+	spanishHelloPrefix = "Hola, "
+	frenchHelloPrefix  = "Bonjour, "
+	polishHelloPrefix  = "Witaj, "
+)
 
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
+	return greetingsPrefix(language) + name
+}
 
-	prefix := englishHelloPrefix
-
+func greetingsPrefix(language string) (prefix string) {
 	switch language {
 	case french:
 		prefix = frenchHelloPrefix
@@ -24,9 +27,10 @@ func Hello(name string, language string) string {
 		prefix = spanishHelloPrefix
 	case polish:
 		prefix = polishHelloPrefix
+	default:
+		prefix = englishHelloPrefix
 	}
-
-	return prefix + name
+	return
 }
 
 func main() {

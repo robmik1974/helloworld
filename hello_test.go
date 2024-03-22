@@ -15,9 +15,9 @@ func TestHello(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("saing in Spanish", func(t *testing.T) {
-		got := Hello("", "Spanish")
-		want := "Hola, World"
+	t.Run("saying in Spanish", func(t *testing.T) {
+		got := Hello("Elodie", "Spanish")
+		want := "Hola, Elodie"
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("saying in French", func(t *testing.T) {
@@ -26,7 +26,7 @@ func TestHello(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("saing in Polish", func(t *testing.T) {
+	t.Run("saying in Polish", func(t *testing.T) {
 		got := Hello("", "Polish")
 		want := "Witaj, World"
 		assertCorrectMessage(t, got, want)
